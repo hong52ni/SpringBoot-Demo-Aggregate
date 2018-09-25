@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/springboot_test?useSSL=true&characterEncoding=utf-8
   redis:
     database: 5
-    host: 192.168.1.22
+    host: 192.168.12.90
     port: 6379
     jedis:
       pool:
