@@ -11,6 +11,7 @@ public class SpringbootRabbitmqApplicationTests {
 
     @Test
     public void contextLoads() {
+
     }
 
 }
