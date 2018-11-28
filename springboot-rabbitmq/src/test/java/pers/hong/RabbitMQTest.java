@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import pers.hong.controller.MessageProvider;
+import pers.hong.controller.MessageProvider2;
 
 /**
  * @Description:
@@ -17,11 +18,14 @@ import pers.hong.controller.MessageProvider;
 public class RabbitMQTest {
     @Autowired
     private MessageProvider messageProvider;
+    @Autowired
+    private MessageProvider2 messageProvider2;
 
     @Test
     public void hello() throws Exception {
         for (int i = 0; i < 1000; i++) {
             messageProvider.send();
+            messageProvider2.send();
             Thread.sleep(1000);
         }
     }

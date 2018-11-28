@@ -12,13 +12,19 @@ import java.util.Date;
  * @Date: 2018/11/16
  */
 @Component
-public class MessageProvider {
+public class MessageProvider3 {
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void send() {
-        String context = "hello " + new Date();
+    public void send1() {
+        String context = "message1";
         System.out.println("Sender1 : " + context);
-        this.rabbitTemplate.convertAndSend("hello", context);
+        this.rabbitTemplate.convertAndSend("exchange", "topic.message1", context);
+    }
+
+    public void send2() {
+        String context = "message2";
+        System.out.println("Sender2 : " + context);
+        this.rabbitTemplate.convertAndSend("exchange", "topic.message2", context);
     }
 }
