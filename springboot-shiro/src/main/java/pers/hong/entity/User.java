@@ -1,10 +1,16 @@
 package pers.hong.entity;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class User {
+    @Id
+    @GeneratedValue
     private Integer userId;
+    @Column(nullable = false, unique = true)
     private String userName;
+    @Column(nullable = false, unique = true)
     private String userPasswrod;
     private List<Role> roleList;
 

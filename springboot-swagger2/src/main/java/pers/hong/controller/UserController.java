@@ -28,7 +28,7 @@ public class UserController {
 
     @ApiOperation(value = "查询所有用户")
     @RequestMapping(value = "userList",method = RequestMethod.GET)
-    public Map<String, Object> getAllUserIinfo(){
+    public Map<String, Object> getAllUserInfo() {
         Map<String,Object> resultMap = new HashMap<>();
         resultMap.put("用户集",userDao.findAll());
         return resultMap;

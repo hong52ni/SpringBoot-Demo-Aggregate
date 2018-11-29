@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @Auther: zwh
  * @Date: 2018/11/16
  */
-@Configuration
+//@Configuration
 public class RabbitConfig {
     @Bean
     public Queue queue() {

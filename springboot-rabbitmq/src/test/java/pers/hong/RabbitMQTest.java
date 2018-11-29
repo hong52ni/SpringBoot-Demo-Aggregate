@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import pers.hong.controller.MessageProvider;
 import pers.hong.controller.MessageProvider2;
+import pers.hong.controller.MessageProvider3;
 
 /**
  * @Description:
@@ -20,6 +21,8 @@ public class RabbitMQTest {
     private MessageProvider messageProvider;
     @Autowired
     private MessageProvider2 messageProvider2;
+    @Autowired
+    private MessageProvider3 topicExchange;
 
     @Test
     public void hello() throws Exception {
@@ -28,5 +31,11 @@ public class RabbitMQTest {
             messageProvider2.send();
             Thread.sleep(1000);
         }
+    }
+
+    @Test
+    public void topic1() throws Exception {
+        topicExchange.send1();
+        topicExchange.send2();
     }
 }
